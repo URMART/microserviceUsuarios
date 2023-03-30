@@ -12,4 +12,6 @@ public interface IUsuariosHandler {
     void saveUsuario(UsuariosRequestDto usuariosRequestDto);
 
     List<UsuariosResponseDto> getAllUsuarios();
+
+    UsuariosResponseDto getUsuarioById(Long id);
 }

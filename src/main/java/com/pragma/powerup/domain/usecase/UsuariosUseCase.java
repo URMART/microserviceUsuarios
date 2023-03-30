@@ -32,4 +32,9 @@ public class UsuariosUseCase implements IUsuariosServicePort {
     public List<Usuarios> findAll() {
         return usuariosPersistencePort.findAll();
     }
+
+    @Override
+    public Usuarios findById(Long id) {
+        return usuariosPersistencePort.findById(id);
+    }
 }

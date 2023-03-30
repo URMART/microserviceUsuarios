@@ -35,4 +35,11 @@ public class UsuariosJpaAdapter implements IUsuariosPersistencePort {
 
         return  usuariosEntityMapper.toUsuariosModelList(entityList);
     }
+
+    @Override
+    public Usuarios findById(Long id) {
+        return usuariosEntityMapper.toUsuariosModel(usuariosRepository.findById(id));
+    }
+
+
 }

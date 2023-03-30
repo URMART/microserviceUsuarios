@@ -13,6 +13,7 @@ import com.pragma.powerup.application.mapper.roles.IRolRequestMapper;
 import com.pragma.powerup.application.mapper.roles.IRolResponseMapper;
 import com.pragma.powerup.domain.model.Roles;
 
+import com.pragma.powerup.infrastructure.exception.NoDataFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -96,9 +97,23 @@ public class UsuariosRestController {
     }
 
     @GetMapping("/{nombre}/auth/admin")
-    public RolResponseDto buscarPorNombre(@PathVariable String nombre) {
+    public RolResponseDto findByNombre(@PathVariable String nombre) {
         return rolHandler.findByNombre(nombre);
     }
+
+    @GetMapping("/id/{id}/auth/admin")
+    public UsuariosResponseDto findById(@PathVariable Long id) {
+
+        UsuariosResponseDto usuario = usuariosHandler.getUsuarioById(id);
+        if(usuario!=null){
+            return usuario;
+        }
+
+        throw  new NoDataFoundException();
+
+
+    }
+
 
 
 }

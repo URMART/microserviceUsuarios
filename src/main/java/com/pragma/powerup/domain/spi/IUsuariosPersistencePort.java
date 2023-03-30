@@ -10,4 +10,6 @@ public interface IUsuariosPersistencePort {
 
     List<Usuarios> findAll();
 
+    Usuarios findById(Long id);
+
 }

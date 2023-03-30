@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UsuariosRequestDto {
-    private Integer id;
+    private Long id;
     private String nombre;
     private String apellido;
     private Long documentoIdentidad;

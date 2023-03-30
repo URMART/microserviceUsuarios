@@ -41,4 +41,9 @@ public class UsuariosHandler implements IUsuariosHandler {
     public List<UsuariosResponseDto> getAllUsuarios() {
         return usuariosResponseMapper.toUsuariosListDto(usuariosServicePort.findAll());
     }
+
+    @Override
+    public UsuariosResponseDto getUsuarioById(Long id) {
+        return usuariosResponseMapper.toUsuarioDto(usuariosServicePort.findById(id));
+    }
 }

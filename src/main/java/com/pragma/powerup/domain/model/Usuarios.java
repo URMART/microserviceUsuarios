@@ -2,7 +2,7 @@ package com.pragma.powerup.domain.model;
 
 public class Usuarios {
 
-    private Integer id;
+    private Long id;
     private String nombre;
     private String apellido;
     private Long documentoIdentidad;
@@ -13,11 +13,11 @@ public class Usuarios {
 
     private Roles rol;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -77,7 +77,7 @@ public class Usuarios {
         this.documentoIdentidad = documentoIdentidad;
     }
 
-    public Usuarios(Integer id, String nombre, String apellido, Long documentoIdentidad, String celular, String email, String clave, Roles rol) {
+    public Usuarios(Long id, String nombre, String apellido, Long documentoIdentidad, String celular, String email, String clave, Roles rol) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
