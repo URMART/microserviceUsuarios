@@ -8,4 +8,6 @@ public interface IUsuariosServicePort {
 
     void saveUsuario(Usuarios usuario);
     List<Usuarios> findAll();
+
+    Usuarios findById(Long id);
 }

@@ -3,11 +3,11 @@ package com.pragma.powerup.infrastructure.out.jpa.adapter;
 import com.pragma.powerup.domain.model.Roles;
 import com.pragma.powerup.domain.spi.IRolesPersistencePort;
 import com.pragma.powerup.infrastructure.out.jpa.entity.RolEntity;
-import com.pragma.powerup.infrastructure.out.jpa.entity.UsuariosEntity;
+
 import com.pragma.powerup.infrastructure.out.jpa.mapper.IRolEntityMapper;
-import com.pragma.powerup.infrastructure.out.jpa.mapper.IUsuariosEntityMapper;
+
 import com.pragma.powerup.infrastructure.out.jpa.repository.IRolRepository;
-import com.pragma.powerup.infrastructure.out.jpa.repository.IUsuariosRepository;
+
 import lombok.RequiredArgsConstructor;
 
 

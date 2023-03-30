@@ -24,7 +24,7 @@ public class UsuariosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column( nullable = false)
-    private Integer id;
+    private Long id;
 
     @NotEmpty
     private String nombre;
