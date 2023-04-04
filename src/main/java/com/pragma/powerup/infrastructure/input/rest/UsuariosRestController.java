@@ -46,30 +46,14 @@ public class UsuariosRestController {
             @ApiResponse(responseCode = "201", description = "Object created", content = @Content),
             @ApiResponse(responseCode = "409", description = "Object already exists", content = @Content)
     })
-    @PostMapping("/auth/admin")
-    public ResponseEntity<Void> saveObject(@Valid @RequestBody UsuariosRequestDto usuariosRequestDto) {
+    @PostMapping()
+    public ResponseEntity<Void> saveUsuario(@Valid @RequestBody UsuariosRequestDto usuariosRequestDto) {
 
-        RolResponseDto buscarRol = rolHandler.findByNombre("Propietario");
-        if(buscarRol!=null) {
-
-            usuariosRequestDto.setRol(rolResponseMapper.toRoles(buscarRol));
             usuariosRequestDto.setClave(passwordEncoder.encode(usuariosRequestDto.getClave()));
             usuariosHandler.saveUsuario(usuariosRequestDto);
-
             return new ResponseEntity<>(HttpStatus.CREATED);
-        }
-
-        Roles rol = new Roles ();
-        rol.setNombre("Propietario");
-        rol.setDescripcion("gestion de platos y empleados ");
-
-        rolHandler.saveRol(rolRequestMapper.toRolDto(rol));
-
-        usuariosRequestDto.setRol(rol);
-        usuariosRequestDto.setClave(passwordEncoder.encode(usuariosRequestDto.getClave()));
-        usuariosHandler.saveUsuario(usuariosRequestDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 
     @Operation(summary = "añadir un nuevo rol")
     @ApiResponses(value = {

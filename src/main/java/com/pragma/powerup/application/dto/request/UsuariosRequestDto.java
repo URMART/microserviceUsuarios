@@ -16,6 +16,5 @@ public class UsuariosRequestDto {
     private String clave;
 
 
-
     private Roles rol;
 }
