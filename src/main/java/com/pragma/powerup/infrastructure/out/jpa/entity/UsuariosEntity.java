@@ -8,10 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "usuarios")
@@ -30,8 +27,10 @@ public class UsuariosEntity {
     private String nombre;
     @NotEmpty
     private String apellido;
-    @NotNull
+
     @Column(name = "documento_identidad")
+    @NotNull(message = "El campo edad no puede ser nulo")
+    @Digits(integer=19, fraction=0, message="El campo numérico debe ser un número entero")
     private Long documentoIdentidad;
     @NotNull
     @Column(length = 13)

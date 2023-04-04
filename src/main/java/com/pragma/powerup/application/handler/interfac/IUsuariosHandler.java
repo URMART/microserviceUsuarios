@@ -14,4 +14,6 @@ public interface IUsuariosHandler {
     List<UsuariosResponseDto> getAllUsuarios();
 
     UsuariosResponseDto getUsuarioById(Long id);
+
+    UsuariosResponseDto findByEmail(String email);
 }

@@ -46,4 +46,9 @@ public class UsuariosHandler implements IUsuariosHandler {
     public UsuariosResponseDto getUsuarioById(Long id) {
         return usuariosResponseMapper.toUsuarioDto(usuariosServicePort.findById(id));
     }
+
+    @Override
+    public UsuariosResponseDto findByEmail(String email) {
+        return usuariosResponseMapper.toUsuarioDto(usuariosServicePort.findByEmail(email));
+    }
 }

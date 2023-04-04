@@ -101,6 +101,11 @@ public class UsuariosRestController {
         return rolHandler.findByNombre(nombre);
     }
 
+    @GetMapping("/{nombre}/email/auth/admin")
+    public UsuariosResponseDto findByEmail(@PathVariable String nombre) {
+        return usuariosHandler.findByEmail(nombre);
+    }
+
     @GetMapping("/id/{id}/auth/admin")
     public UsuariosResponseDto findById(@PathVariable Long id) {
 

@@ -12,4 +12,5 @@ public interface IUsuariosPersistencePort {
 
     Usuarios findById(Long id);
 
+    Usuarios findByEmail(String email);
 }

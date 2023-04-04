@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: usuarios-service
+  cloud:
+    config:
+      uri: http://localhost:8083
+      username: root
+      password: s3cr3t
