@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IUsuariosRepository extends JpaRepository<UsuariosEntity, Integer> {
     UsuariosEntity findById(Long id);
+    UsuariosEntity findByEmail(String email);
 }

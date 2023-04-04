@@ -37,4 +37,9 @@ public class UsuariosUseCase implements IUsuariosServicePort {
     public Usuarios findById(Long id) {
         return usuariosPersistencePort.findById(id);
     }
+
+    @Override
+    public Usuarios findByEmail(String email) {
+        return usuariosPersistencePort.findByEmail(email);
+    }
 }
